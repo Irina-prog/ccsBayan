@@ -1,0 +1,117 @@
+ @keyframes show-bayans {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+          
+        visibility: visible;
+        height: auto;
+    }
+  }
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+          height: auto; 
+    }
+    100% {
+        opacity: 0;
+        
+        visibility: hidden;
+        height: 0;
+    }
+} 
+
+
+body {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+   /* font-size: 2em;*/
+    font-family: Arial, sans-serif;
+    color: black ;
+    font-style: normal;
+    font-weight: normal;
+    visibility: hidden;
+    animation: show-bayans 0.5s linear 0.5s 1 normal forwards;
+}
+.header {
+    
+    font-size: min(2em, 10vw);
+    font-weight: bold;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+.wrapper:hover > details.bayan > summary > .title > img.marker {
+    visibility: visible;
+}
+.wrapper:hover > details.bayan > summary > .title p,  details.bayan[open] > summary > .title p{
+    color: black;
+}
+details.bayan > summary  {
+    border-bottom: 1px solid black;
+}
+details.bayan:last-of-type > summary {
+    border-bottom: none;
+}
+details.bayan:first-of-type > summary  {
+    border-top: 1px solid black;
+}
+
+details.bayan > summary{
+    cursor: pointer;    
+    list-style: none;
+}
+details.bayan > summary > .content {
+    position: relative;
+    animation: hide 0.3s linear 0s 1 normal forwards;
+   
+}
+details.bayan[open] > summary > .content, details.bayan:hover > summary > .content  {
+    animation: show 0.3s linear 0s 1 normal forwards;
+}
+
+details.bayan > summary > .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+details.bayan > summary > .title > img.marker {
+    transform: rotateY(0deg) rotate(0deg);
+    transition: transform 0.3s;
+    width: min(1.5em, 7vw);
+    object-fit: contain;
+    visibility: hidden;
+}
+
+details.bayan[open] > summary > .title > img.marker, details.bayan:hover > summary > .title > img.marker {
+    transform: rotateY(0deg) rotate(45deg);
+}
+details.bayan > summary > .title p {
+    font-size: min(1.5em, 7vw);
+    font-weight: bolder;
+    color: blue;
+}
+.svg {
+    object-fit: contain;
+    /*width: 80%;*/
+    display: block;
+    margin: 0 auto;
+}
