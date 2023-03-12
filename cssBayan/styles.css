@@ -52,6 +52,7 @@ body {
     
     font-size: min(2em, 10vw);
     font-weight: bold;
+    line-height: 4em;
 }
 .wrapper {
     display: flex;
@@ -96,22 +97,39 @@ details.bayan > summary > .title {
 details.bayan > summary > .title > img.marker {
     transform: rotateY(0deg) rotate(0deg);
     transition: transform 0.3s;
-    width: min(1.5em, 7vw);
+    width: min(2em, 6vw);
     object-fit: contain;
-    visibility: hidden;
 }
 
 details.bayan[open] > summary > .title > img.marker, details.bayan:hover > summary > .title > img.marker {
     transform: rotateY(0deg) rotate(45deg);
 }
 details.bayan > summary > .title p {
-    font-size: min(1.5em, 7vw);
+    font-size: min(1.5em, 4vw);
+    line-height: 3em;
     font-weight: bolder;
     color: blue;
 }
 .svg {
     object-fit: contain;
-    /*width: 80%;*/
+    width: 80%;
     display: block;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px){
+    .wrapper {
+        
+        width: 100%;
+        margin: 0;
+    } 
+    .wrapper > details.bayan > summary, .wrapper > .header  {
+        padding: 0 5vw;
+    }
+}
+@media (hover: hover) {
+    details.bayan > summary > .title > img.marker {
+        visibility: hidden;
+    }
+  }
+  
