@@ -54,7 +54,7 @@
  }
 
  .header {
-     font-size: 7vw;
+     font-size: min(4rem, 7vw);
      font-weight: bold;
      line-height: 10vw;
  }
@@ -112,7 +112,7 @@
  details.bayan>summary>.title>img.marker {
      transform: rotateY(0deg) rotate(0deg);
      transition: transform 0.3s;
-     width: min(3rem, 5vw);
+     width: min(4rem, 7vw);
      object-fit: contain;
  }
 
@@ -122,8 +122,8 @@
  }
 
  details.bayan>summary>.title p {
-     font-size: min(2rem, 4vw);
-     line-height: min(3rem, 5vw);
+     font-size: min(3rem, 5vw);
+     line-height: min(4rem, 7vw);
      font-weight: bolder;
      color: blue;
  }
